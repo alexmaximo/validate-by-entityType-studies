@@ -1,10 +1,5 @@
 package com.validation.component;
 
-import com.validation.component.domain.FieldEntityType;
-import com.validation.component.domain.FieldMeta;
-import com.validation.component.domain.FieldType;
-import com.validation.partner.domain.Partner;
-import com.validation.partner.domain.enums.AttributeEntityType;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.*;
@@ -26,15 +21,15 @@ public class FieldsValidator {
         return new FieldsValidator(byFieldCode, rules);
     }
 
-    public <E> List<ConstraintViolation> validate(Partner partner, final AttributeEntityType entityType) {
+    public List<ConstraintViolation> validate(final ExtendedField extended, final FieldEntityType entityType) {
         List<ConstraintViolation> violations = new ArrayList<>();
-        partner.getAttributeValueList().forEach(item -> {
+        extended.getFieldValues().forEach(item -> {
             final FieldMeta meta = byFieldCode.get(Pair.of(item.getCode(), entityType));
             if (Objects.isNull(meta)) {
                 violations.add(ConstraintViolation.createUnsupportedField(item));
                 return;
             }
-            List<ConstraintViolation> result = rules.getOrDefault(meta.getType(), Collections.emptyList()).stream().map(rules -> rules.apply(meta, item))
+            List<ConstraintViolation> result = rules.getOrDefault(meta.getType(), Collections.emptyList()).stream().map(rule -> rule.apply(meta, item))
                     .filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
             violations.addAll(result);
         });

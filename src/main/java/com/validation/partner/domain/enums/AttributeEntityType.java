@@ -1,7 +1,7 @@
 package com.validation.partner.domain.enums;
 
-import com.validation.component.domain.FieldEntityType;
+import com.validation.component.FieldEntityType;
 
 public enum AttributeEntityType implements FieldEntityType {
-    PARTNER
+    PARTNER, CONTRIBUTOR, BRAND
 }

@@ -1,6 +1,6 @@
 package com.validation.partner.domain;
 
-import com.validation.component.domain.FieldValue;
+import com.validation.component.FieldValue;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package com.validation.partner.exceptions;
+package com.validation.partner.usecase.exceptions;
 
 import com.validation.component.ConstraintViolation;
 

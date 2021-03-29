@@ -1,10 +1,17 @@
 package com.validation.partner.domain;
 
+import com.validation.component.ExtendedField;
+import com.validation.component.FieldValue;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class Brand {
-    private List<AttributeValue> attributeValues;
+public class Brand implements ExtendedField {
+    private List<AttributeValue> attributes;
+
+    @Override
+    public List<? extends FieldValue> getFieldValues() {
+        return this.getAttributes();
+    }
 }

@@ -1,4 +1,4 @@
-package com.validation.component.domain;
+package com.validation.component;
 
 public interface FieldMeta {
     String getCode();

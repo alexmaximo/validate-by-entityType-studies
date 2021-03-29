@@ -2,7 +2,7 @@ package com.validation.partner.usecase;
 
 import com.validation.component.ConstraintRule;
 import com.validation.component.FieldsValidator;
-import com.validation.component.domain.FieldType;
+import com.validation.component.FieldType;
 import com.validation.partner.domain.enums.AttributeType;
 import com.validation.partner.repository.AttributesMetadaRepository;
 import org.springframework.cache.annotation.Cacheable;

@@ -2,9 +2,9 @@ package com.validation.partner.usecase;
 
 import com.validation.component.ConstraintRule;
 import com.validation.component.ConstraintViolation;
-import com.validation.component.domain.FieldMeta;
-import com.validation.component.domain.FieldType;
-import com.validation.component.domain.FieldValue;
+import com.validation.component.FieldMeta;
+import com.validation.component.FieldType;
+import com.validation.component.FieldValue;
 import com.validation.partner.domain.enums.AttributeType;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
 package com.validation.partner.repository.entities;
 
-import com.validation.component.domain.FieldMeta;
+import com.validation.component.FieldMeta;
 import com.validation.partner.domain.enums.AttributeEntityType;
 import com.validation.partner.domain.enums.AttributeType;
 import lombok.Data;
